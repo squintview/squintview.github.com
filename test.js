@@ -1,3 +1,4 @@
+(function() {
 player = function(name, sixes, srate, out, runs, overs) {
 	this.name = name;
 	this.sixes = sixes;
@@ -63,7 +64,6 @@ mycb = function(data) {
 
  }
 
- function getData(matchnum) {
 	var results = document.getElementById('results');
 	var url = 'select * from html where url = "http://www.espncricinfo.com/icc_cricket_worldcup2011/engine/current/match/433586.html?view=scorecard" and xpath="//*[@id=\"inningsBat1\"]//tr[@class=\"inningsRow\"]"';
 	var api = 'http://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(url) + '&format=json&diagnostics=false&callback=mycb';
@@ -73,10 +73,4 @@ mycb = function(data) {
 	var s = document.createElement('script');
 	s.setAttribute('src',api);
 	document.getElementsByTagName('head')[0].appendChild(s);
- }
-
- document.getElementById("matchsearch").onsubmit = function(){
-	var matchnum = document.getElementById('query').value;
-	getData(matchnum);
-	return false;
- }
+}();
