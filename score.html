@@ -350,6 +350,8 @@ mycb = function(data) {
 	score = playerdetails.wicket_list['nonbowler'] * 30 + score;
 	score = playerdetails.wicket_list['bowler'] * 15 + score;
 
+	score = playerdetails.maidens * 6 + score;
+
 	if (playerdetails.overs >= 3) {
 		if (playerdetails.economy>=0 && playerdetails.economy<3) score = score + 50;
 		if (playerdetails.economy>=3 && playerdetails.economy<4) score = score + 30;
@@ -364,7 +366,8 @@ mycb = function(data) {
 	score = playerdetails.stumping * 20 + score;
 	score = playerdetails.runout_list['direct'] * 20 + score;
 	score = playerdetails.runout_list['indirect'] * 10 + score;
-
+	
+	if (playerdetails.pom == 1) score += 100;
 	playerdetails.points = score;
  }
 
