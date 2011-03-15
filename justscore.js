@@ -1,4 +1,3 @@
-<script type="text/javascript" charset="utf-8">
 function trim(data) {
 	return data.replace(/^\s+|\s+$/g,"");
 }
@@ -375,4 +374,3 @@ mycb = function(data) {
 	getData(matchnum);
 	return false;;
  }
-</script>
