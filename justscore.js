@@ -221,10 +221,13 @@ mycb = function(data) {
 		// totaldata = totaldata + name + ' Runs: ' + runs + '<br>' ;
 		playerstats[name] = plvar;
 	}
-	var e = document.createElement('div');
-	e.setAttribute('id','jsresults');
-	// totaldata = '<table><tr><td>Name</td><td>Points</td><td>Category</td><td>MOM</td></tr>';
-	var totaldata = '<table><tr><td>Name</td><td>Points</td><td>Category</td><td>Runs</td><td>Sixes</td><td>Rate</td><td>Wickets</td><td>Economy</td></tr>';
+	var e = document.getElementById('jsresults');
+	if (e == null) {
+		var e = document.createElement('div');
+		e.setAttribute('id','jsresults');
+	}
+	e.innerHTML = '';
+	var totaldata = '<table><tr><td>Name</td><td>Points</td><td>Category</td><td>Runs</td><td>Sixes</td><td>Strike Rate</td><td>Overs</td><td>Wickets</td><td>Economy</td><td>Catches</td></tr>';
 	for (plmember in playerstats) {
 		calcpoints(playerstats[plmember]);
 		if(typeof playerstats[plmember].runs == 'undefined')playerstats[plmember].runs = 0;
@@ -237,8 +240,10 @@ mycb = function(data) {
 		+ '</td><td>' + playerstats[plmember].runs
 		+ '</td><td>' + playerstats[plmember].sixes 
 		+ '</td><td>' + playerstats[plmember].srate 
+		+ '</td><td>' + playerstats[plmember].overs 
 		+ '</td><td>' + playerstats[plmember].wickets 
 		+ '</td><td>' + playerstats[plmember].economy 
+		+ '</td><td>' + playerstats[plmember].catches 
 		+ '</td><td></tr>';
 	}
 	totaldata = totaldata + '</table>';
