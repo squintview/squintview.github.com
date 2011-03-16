@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title> Fantasy Cricket Score </title>
+	<meta name="Author" content="Nirmal Thangaraj"/>
+	<meta http-equiv="cache-control" content="no-cache"/>
+</head>
+<body>
+<form id="matchsearch">
+<p><label for="query">Enter match number:</label>
+<input id="query" type="text"/></p>
+</form>
+
+<div id="results"></div>
+
+<script type="text/javascript" charset="utf-8">
+var pelem = document.createElement('script');
+pelem.setAttribute('id','scorescript');
+pelem.setAttribute('src', "http://squintview.github.com/justscore.js?r="+Math.random());
+document.getElementsByTagName('head')[0].appendChild(pelem);
+
+</script>
+</body>
+<!-- footer>&copy; Nirmal Thangaraj - mail me at firstnamelastname_at_yahoo_dot_com</footer -->
+
+</html>
+
