@@ -248,7 +248,7 @@ mycb = function(data) {
 	}
 	totaldata = totaldata + '</table>';
 	totaldata = totaldata + '<br><br><font size=2><i>add 100 points for the player of the match and double total points if the player is your team captain </i>';
-	totaldata = totaldata + '<i><br>&copy; Nirmal Thangaraj - Last updated - 15-March-2011 </br></i></font>';
+	totaldata = totaldata + '<i><br>&copy; Nirmal Thangaraj - Last updated - 21-March-2011 </br></i></font>';
 	e.innerHTML = totaldata;
 	document.getElementsByTagName('body')[0].appendChild(e);
 }
