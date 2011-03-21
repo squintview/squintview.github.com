@@ -374,7 +374,19 @@ mycb = function(data) {
 	document.getElementsByTagName('head')[0].appendChild(s);
  }
 
-	document.getElementById("matchsearch").onsubmit = function(){
+var imglinks = document.getElementsByTagName('a');
+for (var i=0; i < imglinks.length; i++) {
+	imglinks[i].onclick = function(event) {
+		var aclass = this.attributes[1].value;
+		if (aclass=="matchlink") {
+			event.preventDefault();
+			var matchnum = this.attributes[0].value;
+			getData(matchnum);
+		}
+	}
+}
+
+document.getElementById("matchsearch").onsubmit = function(){
 	var matchnum = document.getElementById('query').value;
 	getData(matchnum);
 	return false;;
