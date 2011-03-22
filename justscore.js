@@ -376,7 +376,7 @@ mycb = function(data) {
 
 var imglinks = document.getElementsByTagName('a');
 for (var i=0; i < imglinks.length; i++) {
-	imglinks[i].onclick = function(event) {
+	imglinks[i].click = function(event) {
 		event.preventDefault();
 		var aclass = this.attributes[1].nodeValue;
 		if (aclass=="matchlink") {
