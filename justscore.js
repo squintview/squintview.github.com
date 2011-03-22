@@ -227,7 +227,7 @@ mycb = function(data) {
 		e.setAttribute('id','jsresults');
 	}
 	e.innerHTML = '';
-	var totaldata = '<table  style="padding:8px; display:table-cell; position:absolute; left:300px; top:30px; border-spacing:2px; border-color=gray; font-family:Lucida Sans Unicode,Lucida Grande,Sans-Serif; font-size:13px; background:white; width:720px; border-collapse:collapse; text-align:left; margin:20px;" id="myTable" class="sortable"><thead><tr><th width="30%">Name</th><th>Points</th><th>Category</th><th>Runs</th><th>Sixes</th><th>Rate</th><th>Overs</th><th>Wickets</th><th>Economy</th><th>Catches</th></tr></thead><tbody>';
+	var totaldata = '<table  style="padding:8px; display:table-cell; position:absolute; left:300px; top:50px; border-spacing:2px; border-color=gray; font-family:Lucida Sans Unicode,Lucida Grande,Sans-Serif; font-size:13px; background:white; width:720px; border-collapse:collapse; text-align:left; margin:20px;" id="myTable" class="sortable"><thead><tr><th width="30%">Name</th><th>Points</th><th>Category</th><th>Runs</th><th>Sixes</th><th>Rate</th><th>Wickets</th><th>Economy</th></tr></thead><tbody>';
 	for (plmember in playerstats) {
 		calcpoints(playerstats[plmember]);
 		if(typeof playerstats[plmember].runs == 'undefined')playerstats[plmember].runs = 0;
@@ -376,15 +376,15 @@ mycb = function(data) {
 
 var imglinks = document.getElementsByTagName('a');
 for (var i=0; i < imglinks.length; i++) {
-	imglinks[i].addEventListener('click', function(event) {
+	imglinks[i].onclick = function(event) {
 		event.preventDefault();
-		var aclass = this.attributes[1].nodeValue;
+		var aclass = this.attributes[1].text;
 		if (aclass=="matchlink") {
 			event.preventDefault();
-			var matchnum = this.attributes[0].nodeValue;
+			var matchnum = this.attributes[0].text;
 			getData(matchnum);
 		}
-	}, true);
+	};
 }
 /*
 document.getElementById("matchsearch").onsubmit = function(){
