@@ -378,10 +378,10 @@ var imglinks = document.getElementsByTagName('a');
 for (var i=0; i < imglinks.length; i++) {
 	imglinks[i].onclick = function(event) {
 		event.preventDefault();
-		var aclass = this.attributes[1].text;
+		var aclass = this.attributes[1].value;
 		if (aclass=="matchlink") {
 			event.preventDefault();
-			var matchnum = this.attributes[0].text;
+			var matchnum = this.attributes[0].value;
 			getData(matchnum);
 		}
 	};
