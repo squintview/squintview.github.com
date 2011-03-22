@@ -376,7 +376,7 @@ mycb = function(data) {
 
 var imglinks = document.getElementsByTagName('a');
 for (var i=0; i < imglinks.length; i++) {
-	imglinks[i].click = function(event) {
+	imglinks[i].addEventListener('click', function(event) {
 		event.preventDefault();
 		var aclass = this.attributes[1].nodeValue;
 		if (aclass=="matchlink") {
@@ -384,7 +384,7 @@ for (var i=0; i < imglinks.length; i++) {
 			var matchnum = this.attributes[0].nodeValue;
 			getData(matchnum);
 		}
-	}
+	}, true);
 }
 /*
 document.getElementById("matchsearch").onsubmit = function(){
